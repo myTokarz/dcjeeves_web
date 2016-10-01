@@ -1,0 +1,59 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="MetroJs.css" media="screen" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./MetroJs.js"></script>
+    <script src="./textfill.js"></script>
+
+</head>
+
+
+
+<body >
+<h1>Animate on Click</h1>
+<div class="tiles red">
+    <div class="live-tile" id="tile1" data-mode="flip">
+        <div class="textfill much">
+            <a class="full" href="#">front</a>
+            <span class="tile-title">front title</span>
+        </div>
+        <div class="textfill much">
+            <p>this tile flips once vertically when clicked using a repeat count of 0</p>
+            <span class="tile-title">back title</span>
+        </div>
+    </div>
+    <div class="live-tile blue" id="tile2" data-direction="horizontal" data-mode="flip">
+        <div class="textfill much">front
+              <span class="tile-title">front title</span>
+        </div>
+        <div class="textfill much">
+            <p>this tile flips horizontally on an interval or when when clicked
+               <span class="tile-title">back title</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+    //animate on click
+var $tile1 = $("#tile1").liveTile({ repeatCount: 0, delay:0 });
+
+$("#tile1").click(function(){
+    $(this).liveTile('play');
+});
+
+var $tile2 = $("#tile2").liveTile();
+$("#tile2").on("click", function(){
+    $("#tile2").liveTile("play", 0);
+});
+
+
+</SCRIPT>
